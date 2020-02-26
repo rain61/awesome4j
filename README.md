@@ -11,9 +11,9 @@
 
 - [面向对象、面向过程](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/面向对象、面向过程.md)
 
-- [面向对象三大特征](awesome4j/awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/面向对象的三大特征.md)
+- [面向对象三大特征](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/面向对象的三大特征.md)
 
-- [面向对象的五大基本原则](awesome4j/awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/面向对象的五大基本原则.md)
+- [面向对象的五大基本原则](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/面向对象的五大基本原则.md)
 
 - [值传递、引用传递](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/值传递、引用传递.md)
 
