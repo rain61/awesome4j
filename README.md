@@ -39,7 +39,7 @@
 
 - [字符串的不可变性](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/string/字符串的不可变性.md)
 
-- [JDK 6和JDK 7中substring的原理及区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/string/JDK 6和JDK 7中substring的原理及区别.md)
+- [JDK6和JDK7中substring的原理及区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/string/JDK6和JDK7中substring的原理及区别.md)
 
 - [String对象的编译期间优化](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/string/String对象的编译期间优化.md)
 
