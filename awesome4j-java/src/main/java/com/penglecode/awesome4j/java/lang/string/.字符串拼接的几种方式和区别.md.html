@@ -1,0 +1,858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C:\workbench\GIT\awesome4j\awesome4j-java\src\main\java\com\penglecode\awesome4j\java\lang\string\.字符串拼接的几种方式和区别.md.html</title>
+
+
+<style type="text/css">
+body {
+	color: #333;
+	font: 13px/1.4 "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	background: transparent;
+	color: #4183c4;
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline: 0 none;
+	text-decoration: underline;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+mark {
+	background: #ff0;
+	color: #000;
+}
+small {
+	font-size: 80%;
+}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+img {
+	border: 0 none;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 1em 40px;
+}
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace,monospace;
+	font-size: 1em;
+}
+
+pre {
+	overflow: auto;
+	font: 12px Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.markdown-body {
+	padding: 30px;
+	font-size: 16px;
+	line-height: 1.6;
+	word-wrap: break-word;
+}
+
+.markdown-body>*:first-child {
+	margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+	margin-bottom: 0 !important;
+}
+
+.markdown-body .absent {
+	color: #c00;
+}
+
+.markdown-body .anchor {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	padding-right: 6px;
+	padding-left: 30px;
+	margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+	outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+	position: relative;
+	margin-top: 1em;
+	margin-bottom: 16px;
+	font-weight: bold;
+	line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+	display: none;
+	color: #000;
+	vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+	padding-left: 8px;
+	margin-left: -30px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+	display: inline-block;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+	font-size: inherit;
+}
+
+.markdown-body h1 {
+	padding-bottom: 0.3em;
+	font-size: 2.25em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+	padding-bottom: 0.3em;
+	font-size: 1.75em;
+	line-height: 1.225;
+	border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+	font-size: 1.5em;
+	line-height: 1.43;
+}
+
+.markdown-body h4 {
+	font-size: 1.25em;
+}
+
+.markdown-body h5 {
+	font-size: 1em;
+}
+
+.markdown-body h6 {
+	font-size: 1em;
+	color: #777;
+}
+
+.markdown-body p,.markdown-body blockquote,
+.markdown-body ul,.markdown-body ol,
+.markdown-body dl,.markdown-body table,
+.markdown-body pre {
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
+.markdown-body hr {
+	height: 4px;
+	padding: 0;
+	margin: 16px 0;
+	background-color: #e7e7e7;
+	border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+	padding-left: 2em;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+	padding: 0;
+	list-style-type: none;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.markdown-body li>p {
+	margin-top: 16px;
+}
+
+.markdown-body dl {
+	padding: 0;
+}
+
+.markdown-body dl dt {
+	padding: 0;
+	margin-top: 16px;
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.markdown-body dl dd {
+	padding: 0 16px;
+	margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+	padding: 0 15px;
+	color: #777;
+	border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+	margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+	margin-bottom: 0;
+}
+
+.markdown-body table {
+	display: block;
+	width: 100%;
+	overflow: auto;
+	word-break: normal;
+	word-break: keep-all;
+}
+
+.markdown-body table th {
+	font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+	padding: 6px 13px;
+	border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+	background-color: #f8f8f8;
+}
+
+.markdown-body img {
+	max-width: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.markdown-body span.frame {
+	display: block;
+	overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+	display: block;
+	float: left;
+	width: auto;
+	padding: 7px;
+	margin: 13px 0 0;
+	overflow: hidden;
+	border: 1px solid #ddd;
+}
+
+.markdown-body span.frame span img {
+	display: block;
+	float: left;
+}
+
+.markdown-body span.frame span span {
+	display: block;
+	padding: 5px 0 0;
+	clear: both;
+	color: #333;
+}
+
+.markdown-body span.align-center {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-center>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.markdown-body span.align-center span img {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.markdown-body span.align-right {
+	display: block;
+	overflow: hidden;
+	clear: both;
+}
+
+.markdown-body span.align-right>span {
+	display: block;
+	margin: 13px 0 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body span.align-right span img {
+	margin: 0;
+	text-align: right;
+}
+
+.markdown-body span.float-left {
+	display: block;
+	float: left;
+	margin-right: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+	margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+	display: block;
+	float: right;
+	margin-left: 13px;
+	overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+	display: block;
+	margin: 13px auto 0;
+	overflow: hidden;
+	text-align: right;
+}
+
+.markdown-body code,.markdown-body tt {
+	padding: 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin: 0;
+	font-size: 85%;
+	background-color: rgba(0,0,0,0.04);
+	border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after,
+.markdown-body tt:before,
+.markdown-body tt:after {
+	letter-spacing: -0.2em;
+	content: "\00a0";
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+	display: none;
+}
+
+.markdown-body del code {
+	text-decoration: inherit;
+}
+
+.markdown-body pre>code {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	word-break: normal;
+	white-space: pre;
+	background: transparent;
+	border: 0;
+}
+
+.markdown-body .highlight {
+	margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+	margin-bottom: 0;
+	word-break: normal;
+}
+
+.markdown-body pre {
+	word-wrap: normal;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+	display: inline;
+	max-width: initial;
+	padding: 0;
+	margin: 0;
+	overflow: initial;
+	line-height: inherit;
+	word-wrap: normal;
+	background-color: transparent;
+	border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after,
+.markdown-body pre tt:before,
+.markdown-body pre tt:after {
+	content: normal;
+}
+
+.highlight .pl-coc,
+.highlight .pl-entl,
+.highlight .pl-entm,
+.highlight .pl-eoa,
+.highlight .pl-mai .pl-sf,
+.highlight .pl-mm,
+.highlight .pl-pdv,
+.highlight .pl-sc,
+.highlight .pl-som,
+.highlight .pl-sr,
+.highlight .pl-v,
+.highlight .pl-vpf {
+	color: #0086b3;
+}
+.highlight .pl-eoac,
+.highlight .pl-mdht,
+.highlight .pl-mi1,
+.highlight .pl-mri,
+.highlight .pl-va,
+.highlight .pl-vpu {
+	color: #008080;
+}
+.highlight .pl-c,
+.highlight .pl-pdc {
+	color: #b4b7b4;
+	font-style: italic;
+}
+.highlight .pl-k,
+.highlight .pl-ko,
+.highlight .pl-kolp,
+.highlight .pl-mc,
+.highlight .pl-mr,
+.highlight .pl-ms,
+.highlight .pl-s,
+.highlight .pl-sok,
+.highlight .pl-st {
+	color: #6e5494;
+}
+.highlight .pl-ef,
+.highlight .pl-enf,
+.highlight .pl-enm,
+.highlight .pl-entc,
+.highlight .pl-eoi,
+.highlight .pl-sf,
+.highlight .pl-smc {
+	color: #d12089;
+}
+.highlight .pl-ens,
+.highlight .pl-eoai,
+.highlight .pl-kos,
+.highlight .pl-mh .pl-pdh,
+.highlight .pl-mp,
+.highlight .pl-pde,
+.highlight .pl-stp {
+	color: #458;
+}
+.highlight .pl-enti {
+	color: #d12089;
+	font-weight: bold;
+}
+.highlight .pl-cce,
+.highlight .pl-enc,
+.highlight .pl-kou,
+.highlight .pl-mq {
+	color: #f93;
+}
+.highlight .pl-mp1 .pl-sf {
+	color: #458;
+	font-weight: bold;
+}
+.highlight .pl-cos,
+.highlight .pl-ent,
+.highlight .pl-md,
+.highlight .pl-mdhf,
+.highlight .pl-ml,
+.highlight .pl-pdc1,
+.highlight .pl-pds,
+.highlight .pl-s1,
+.highlight .pl-scp,
+.highlight .pl-sol {
+	color: #df5000;
+}
+.highlight .pl-c1,
+.highlight .pl-cn,
+.highlight .pl-pse,
+.highlight .pl-pse .pl-s2,
+.highlight .pl-vi {
+	color: #a31515;
+}
+.highlight .pl-mb,
+.highlight .pl-pdb {
+	color: #df5000;
+	font-weight: bold;
+}
+.highlight .pl-mi,
+.highlight .pl-pdi {
+	color: #6e5494;
+	font-style: italic;
+}
+.highlight .pl-ms1 {
+	background-color: #f5f5f5;
+}
+.highlight .pl-mdh,
+.highlight .pl-mdi {
+	font-weight: bold;
+}
+.highlight .pl-mdr {
+	color: #0086b3;
+	font-weight: bold;
+}
+.highlight .pl-s2 {
+	color: #333;
+}
+.highlight .pl-ii {
+	background-color: #df5000;
+	color: #fff;
+}
+.highlight .pl-ib {
+	background-color: #f93;
+}
+.highlight .pl-id {
+	background-color: #a31515;
+	color: #fff;
+}
+.highlight .pl-iu {
+	background-color: #b4b7b4;
+}
+.highlight .pl-mo {
+	color: #969896;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+function getDocumentScrollTop() 
+{
+   var res = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset || 0;
+   // alert(res);
+   return res;
+}
+
+function setDocumentScrollTop(ypos) 
+{
+	window.scrollTo(0, ypos);
+}
+
+</script>
+
+
+</head>
+<body class="markdown-body">
+<p>字符串，是Java中最常用的一个数据类型了。</p> 
+<p>本文，也是对于Java中字符串相关知识的一个补充，主要来介绍一下字符串拼接相关的知识。本文基于jdk1.8.0_181。</p> 
+<h3> <a id="字符串拼接" class="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>字符串拼接</h3> 
+<p>字符串拼接是我们在Java代码中比较经常要做的事情，就是把多个字符串拼接到一起。</p> 
+<p>我们都知道，<strong>String是Java中一个不可变的类</strong>，所以他一旦被实例化就无法被修改。</p> 
+<blockquote> 
+ <p>不可变类的实例一旦创建，其成员变量的值就不能被修改。这样设计有很多好处，比如可以缓存hashcode、使用更加便利以及更加安全等。</p> 
+</blockquote> 
+<p>但是，既然字符串是不可变的，那么字符串拼接又是怎么回事呢？</p> 
+<p><strong>字符串不变性与字符串拼接</strong></p> 
+<p>其实，所有的所谓字符串拼接，都是重新生成了一个新的字符串。下面一段字符串拼接代码：</p> 
+<div class="highlight highlight-source-java">
+ <pre><span class="pl-smi">String</span> s <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>abcd<span class="pl-pds">&quot;</span></span>;
+s <span class="pl-k">=</span> s<span class="pl-k">.</span>concat(<span class="pl-s"><span class="pl-pds">&quot;</span>ef<span class="pl-pds">&quot;</span></span>);</pre>
+</div> 
+<p>其实最后我们得到的s已经是一个新的字符串了。如下图</p> 
+<p><a href="https://camo.githubusercontent.com/60e15b7596ac3c8b80770f189fd003707da47c0b/68747470733a2f2f7777772e686f6c6c6973636875616e672e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30312f31353437323839373930383339312e6a7067" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/60e15b7596ac3c8b80770f189fd003707da47c0b/68747470733a2f2f7777772e686f6c6c6973636875616e672e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30312f31353437323839373930383339312e6a7067" alt="" data-canonical-src="https://www.hollischuang.com/wp-content/uploads/2019/01/15472897908391.jpg" style="max-width:100%;" /></a>￼</p> 
+<p>s中保存的是一个重新创建出来的String对象的引用。</p> 
+<p>那么，在Java中，到底如何进行字符串拼接呢？字符串拼接有很多种方式，这里简单介绍几种比较常用的。</p> 
+<p><strong>使用<code>+</code>拼接字符串</strong></p> 
+<p>在Java中，拼接字符串最简单的方式就是直接使用符号<code>+</code>来拼接。如：</p> 
+<div class="highlight highlight-source-java">
+ <pre><span class="pl-smi">String</span> wechat <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Hollis<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">String</span> introduce <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>每日更新Java相关技术文章<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">String</span> hollis <span class="pl-k">=</span> wechat <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span> <span class="pl-k">+</span> introduce;</pre>
+</div> 
+<p>这里要特别说明一点，有人把Java中使用<code>+</code>拼接字符串的功能理解为<strong>运算符重载</strong>。其实并不是，<strong>Java是不支持运算符重载的</strong>。这其实只是Java提供的一个<strong>语法糖</strong>。后面再详细介绍。</p> 
+<blockquote> 
+ <p>运算符重载：在计算机程序设计中，运算符重载（英语：operator overloading）是多态的一种。运算符重载，就是对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型。</p> 
+ <p>语法糖：语法糖（Syntactic sugar），也译为糖衣语法，是由英国计算机科学家彼得&middot;兰丁发明的一个术语，指计算机语言中添加的某种语法，这种语法对语言的功能没有影响，但是更方便程序员使用。语法糖让程序更加简洁，有更高的可读性。</p> 
+</blockquote> 
+<p><strong>concat</strong><br /> 除了使用<code>+</code>拼接字符串之外，还可以使用String类中的方法concat方法来拼接字符串。如：</p> 
+<div class="highlight highlight-source-java">
+ <pre><span class="pl-smi">String</span> wechat <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Hollis<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">String</span> introduce <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>每日更新Java相关技术文章<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">String</span> hollis <span class="pl-k">=</span> wechat<span class="pl-k">.</span>concat(<span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)<span class="pl-k">.</span>concat(introduce);</pre>
+</div> 
+<p><strong>StringBuffer</strong></p> 
+<p>关于字符串，Java中除了定义了一个可以用来定义<strong>字符串常量</strong>的<code>String</code>类以外，还提供了可以用来定义<strong>字符串变量</strong>的<code>StringBuffer</code>类，它的对象是可以扩充和修改的。</p> 
+<p>使用<code>StringBuffer</code>可以方便的对字符串进行拼接。如：</p> 
+<div class="highlight highlight-source-java">
+ <pre><span class="pl-smi">StringBuffer</span> wechat <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">StringBuffer</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Hollis<span class="pl-pds">&quot;</span></span>);
+<span class="pl-smi">String</span> introduce <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>每日更新Java相关技术文章<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">StringBuffer</span> hollis <span class="pl-k">=</span> wechat<span class="pl-k">.</span>append(<span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)<span class="pl-k">.</span>append(introduce);</pre>
+</div> 
+<p><strong>StringBuilder</strong><br /> 除了<code>StringBuffer</code>以外，还有一个类<code>StringBuilder</code>也可以使用，其用法和<code>StringBuffer</code>类似。如：</p> 
+<div class="highlight highlight-source-java">
+ <pre><span class="pl-smi">StringBuilder</span> wechat <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">StringBuilder</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Hollis<span class="pl-pds">&quot;</span></span>);
+<span class="pl-smi">String</span> introduce <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>每日更新Java相关技术文章<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">StringBuilder</span> hollis <span class="pl-k">=</span> wechat<span class="pl-k">.</span>append(<span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>)<span class="pl-k">.</span>append(introduce);</pre>
+</div> 
+<p><strong>StringUtils.join</strong><br /> 除了JDK中内置的字符串拼接方法，还可以使用一些开源类库中提供的字符串拼接方法名，如<code>apache.commons中</code>提供的<code>StringUtils</code>类，其中的<code>join</code>方法可以拼接字符串。</p> 
+<div class="highlight highlight-source-java">
+ <pre><span class="pl-smi">String</span> wechat <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Hollis<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">String</span> introduce <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>每日更新Java相关技术文章<span class="pl-pds">&quot;</span></span>;
+<span class="pl-smi">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-smi">StringUtils</span><span class="pl-k">.</span>join(wechat, <span class="pl-s"><span class="pl-pds">&quot;</span>,<span class="pl-pds">&quot;</span></span>, introduce));</pre>
+</div> 
+<p>这里简单说一下，StringUtils中提供的join方法，最主要的功能是：将数组或集合以某拼接符拼接到一起形成新的字符串，如：</p> 
+<pre><code>String []list  ={&quot;Hollis&quot;,&quot;每日更新Java相关技术文章&quot;};
+String result= StringUtils.join(list,&quot;,&quot;);
+System.out.println(result);
+//结果：Hollis,每日更新Java相关技术文章
+</code></pre> 
+<p>并且，Java8中的String类中也提供了一个静态的join方法，用法和StringUtils.join类似。</p> 
+<p>以上就是比较常用的五种在Java种拼接字符串的方式，那么到底哪种更好用呢？为什么阿里巴巴Java开发手册中不建议在循环体中使用<code>+</code>进行字符串拼接呢？</p> 
+<p><a href="https://camo.githubusercontent.com/425258370f5e0a09ee0661f7f807b1bc200ee532/68747470733a2f2f7777772e686f6c6c6973636875616e672e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30312f31353437323835303137303233302e6a7067" target="_blank" rel="nofollow"><img src="https://camo.githubusercontent.com/425258370f5e0a09ee0661f7f807b1bc200ee532/68747470733a2f2f7777772e686f6c6c6973636875616e672e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031392f30312f31353437323835303137303233302e6a7067" alt="" data-canonical-src="https://www.hollischuang.com/wp-content/uploads/2019/01/15472850170230.jpg" style="max-width:100%;" /></a>￼</p> 
+<p>(阿里巴巴Java开发手册中关于字符串拼接的规约)</p> 
+<h3> <a id="使用拼接字符串的实现原理" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%8B%BC%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用<code>+</code>拼接字符串的实现原理</h3> 
+<p>前面提到过，使用<code>+</code>拼接字符串，其实只是Java提供的一个语法糖， 那么，我们就来解一解这个语法糖，看看他的内部原理到底是如何实现的。</p> 
+<p>还是这样一段代码。我们把他生成的字节码进行反编译，看看结果。</p> 
+<pre><code>String wechat = &quot;Hollis&quot;;
+String introduce = &quot;每日更新Java相关技术文章&quot;;
+String hollis = wechat + &quot;,&quot; + introduce;
+</code></pre> 
+<p>反编译后的内容如下，反编译工具为jad。</p> 
+<pre><code>String wechat = &quot;Hollis&quot;;
+String introduce = &quot;\u6BCF\u65E5\u66F4\u65B0Java\u76F8\u5173\u6280\u672F\u6587\u7AE0&quot;;//每日更新Java相关技术文章
+String hollis = (new StringBuilder()).append(wechat).append(&quot;,&quot;).append(introduce).toString();
+</code></pre> 
+<p>通过查看反编译以后的代码，我们可以发现，原来字符串常量在拼接过程中，是将String转成了StringBuilder后，使用其append方法进行处理的。</p> 
+<p>那么也就是说，Java中的<code>+</code>对字符串的拼接，其实现原理是使用<code>StringBuilder.append</code>。</p> 
+<h3> <a id="concat是如何实现的" class="anchor" href="#concat%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>concat是如何实现的</h3> 
+<p>我们再来看一下concat方法的源代码，看一下这个方法又是如何实现的。</p> 
+<pre><code>public String concat(String str) {
+    int otherLen = str.length();
+    if (otherLen == 0) {
+        return this;
+    }
+    int len = value.length;
+    char buf[] = Arrays.copyOf(value, len + otherLen);
+    str.getChars(buf, len);
+    return new String(buf, true);
+}
+</code></pre> 
+<p>这段代码首先创建了一个字符数组，长度是已有字符串和待拼接字符串的长度之和，再把两个字符串的值复制到新的字符数组中，并使用这个字符数组创建一个新的String对象并返回。</p> 
+<p>通过源码我们也可以看到，经过concat方法，其实是new了一个新的String，这也就呼应到前面我们说的字符串的不变性问题上了。</p> 
+<h3> <a id="stringbuffer和stringbuilder" class="anchor" href="#stringbuffer%E5%92%8Cstringbuilder" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>StringBuffer和StringBuilder</h3> 
+<p>接下来我们看看<code>StringBuffer</code>和<code>StringBuilder</code>的实现原理。</p> 
+<p>和<code>String</code>类类似，<code>StringBuilder</code>类也封装了一个字符数组，定义如下：</p> 
+<pre><code>char[] value;
+</code></pre> 
+<p>与<code>String</code>不同的是，它并不是<code>final</code>的，所以他是可以修改的。另外，与<code>String</code>不同，字符数组中不一定所有位置都已经被使用，它有一个实例变量，表示数组中已经使用的字符个数，定义如下：</p> 
+<pre><code>int count;
+</code></pre> 
+<p>其append源码如下：</p> 
+<pre><code>public StringBuilder append(String str) {
+    super.append(str);
+    return this;
+}
+</code></pre> 
+<p>该类继承了<code>AbstractStringBuilder</code>类，看下其<code>append</code>方法：</p> 
+<pre><code>public AbstractStringBuilder append(String str) {
+    if (str == null)
+        return appendNull();
+    int len = str.length();
+    ensureCapacityInternal(count + len);
+    str.getChars(0, len, value, count);
+    count += len;
+    return this;
+}
+</code></pre> 
+<p>append会直接拷贝字符到内部的字符数组中，如果字符数组长度不够，会进行扩展。</p> 
+<p><code>StringBuffer</code>和<code>StringBuilder</code>类似，最大的区别就是<code>StringBuffer</code>是线程安全的，看一下<code>StringBuffer</code>的<code>append</code>方法。</p> 
+<pre><code>public synchronized StringBuffer append(String str) {
+    toStringCache = null;
+    super.append(str);
+    return this;
+}
+</code></pre> 
+<p>该方法使用<code>synchronized</code>进行声明，说明是一个线程安全的方法。而<code>StringBuilder</code>则不是线程安全的。</p> 
+<h3> <a id="stringutilsjoin是如何实现的" class="anchor" href="#stringutilsjoin%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>StringUtils.join是如何实现的</h3> 
+<p>通过查看<code>StringUtils.join</code>的源代码，我们可以发现，其实他也是通过<code>StringBuilder</code>来实现的。</p> 
+<pre><code>public static String join(final Object[] array, String separator, final int startIndex, final int endIndex) {
+    if (array == null) {
+        return null;
+    }
+    if (separator == null) {
+        separator = EMPTY;
+    }
+
+    // endIndex - startIndex &gt; 0:   Len = NofStrings *(len(firstString) + len(separator))
+    //           (Assuming that all Strings are roughly equally long)
+    final int noOfItems = endIndex - startIndex;
+    if (noOfItems &lt;= 0) {
+        return EMPTY;
+    }
+
+    final StringBuilder buf = new StringBuilder(noOfItems * 16);
+
+    for (int i = startIndex; i &lt; endIndex; i++) {
+        if (i &gt; startIndex) {
+            buf.append(separator);
+        }
+        if (array[i] != null) {
+            buf.append(array[i]);
+        }
+    }
+    return buf.toString();
+}
+</code></pre> 
+<h3> <a id="效率比较" class="anchor" href="#%E6%95%88%E7%8E%87%E6%AF%94%E8%BE%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>效率比较</h3> 
+<p>既然有这么多种字符串拼接的方法，那么到底哪一种效率最高呢？我们来简单对比一下。</p> 
+<pre><code>long t1 = System.currentTimeMillis();
+//这里是初始字符串定义
+for (int i = 0; i &lt; 50000; i++) {
+    //这里是字符串拼接代码
+}
+long t2 = System.currentTimeMillis();
+System.out.println(&quot;cost:&quot; + (t2 - t1));
+</code></pre> 
+<p>我们使用形如以上形式的代码，分别测试下五种字符串拼接代码的运行时间。得到结果如下：</p> 
+<pre><code>+ cost:5119
+StringBuilder cost:3
+StringBuffer cost:4
+concat cost:3623
+StringUtils.join cost:25726
+</code></pre> 
+<p>从结果可以看出，用时从短到长的对比是：</p> 
+<p><code>StringBuilder</code>&lt;<code>StringBuffer</code>&lt;<code>concat</code>&lt;<code>+</code>&lt;<code>StringUtils.join</code></p> 
+<p><code>StringBuffer</code>在<code>StringBuilder</code>的基础上，做了同步处理，所以在耗时上会相对多一些。</p> 
+<p>StringUtils.join也是使用了StringBuilder，并且其中还是有很多其他操作，所以耗时较长，这个也容易理解。其实StringUtils.join更擅长处理字符串数组或者列表的拼接。</p> 
+<p>那么问题来了，前面我们分析过，其实使用<code>+</code>拼接字符串的实现原理也是使用的<code>StringBuilder</code>，那为什么结果相差这么多，高达1000多倍呢？</p> 
+<p>我们再把以下代码反编译下：</p> 
+<pre><code>long t1 = System.currentTimeMillis();
+String str = &quot;hollis&quot;;
+for (int i = 0; i &lt; 50000; i++) {
+    String s = String.valueOf(i);
+    str += s;
+}
+long t2 = System.currentTimeMillis();
+System.out.println(&quot;+ cost:&quot; + (t2 - t1));
+</code></pre> 
+<p>反编译后代码如下：</p> 
+<pre><code>long t1 = System.currentTimeMillis();
+String str = &quot;hollis&quot;;
+for(int i = 0; i &lt; 50000; i++)
+{
+    String s = String.valueOf(i);
+    str = (new StringBuilder()).append(str).append(s).toString();
+}
+
+long t2 = System.currentTimeMillis();
+System.out.println((new StringBuilder()).append(&quot;+ cost:&quot;).append(t2 - t1).toString());
+</code></pre> 
+<p>我们可以看到，反编译后的代码，在<code>for</code>循环中，每次都是<code>new</code>了一个<code>StringBuilder</code>，然后再把<code>String</code>转成<code>StringBuilder</code>，再进行<code>append</code>。</p> 
+<p>而频繁的新建对象当然要耗费很多时间了，不仅仅会耗费时间，频繁的创建对象，还会造成内存资源的浪费。</p> 
+<p>所以，阿里巴巴Java开发手册建议：循环体内，字符串的连接方式，使用 <code>StringBuilder</code> 的 <code>append</code> 方法进行扩展。而不要使用<code>+</code>。</p> 
+<h3> <a id="总结" class="anchor" href="#%E6%80%BB%E7%BB%93" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>总结</h3> 
+<p>本文介绍了什么是字符串拼接，虽然字符串是不可变的，但是还是可以通过新建字符串的方式来进行字符串的拼接。</p> 
+<p>常用的字符串拼接方式有五种，分别是使用<code>+</code>、使用<code>concat</code>、使用<code>StringBuilder</code>、使用<code>StringBuffer</code>以及使用<code>StringUtils.join</code>。</p> 
+<p>由于字符串拼接过程中会创建新的对象，所以如果要在一个循环体中进行字符串拼接，就要考虑内存问题和效率问题。</p> 
+<p>因此，经过对比，我们发现，直接使用<code>StringBuilder</code>的方式是效率最高的。因为<code>StringBuilder</code>天生就是设计来定义可变字符串和字符串的变化操作的。</p> 
+<p>但是，还要强调的是：</p> 
+<p>1、如果不是在循环体中进行字符串拼接的话，直接使用<code>+</code>就好了。</p> 
+<p>2、如果在并发场景中进行字符串拼接的话，要使用<code>StringBuffer</code>来代替<code>StringBuilder</code>。</p>
+</body>
+</html>
