@@ -7,6 +7,8 @@
 
 - [平台无关性](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/intro/平台无关性.md)
 
+- [JRE、JDK、JVM](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/intro/JRE、JDK、JVM.md)
+
 ### 面向对象
 
 - [面向对象、面向过程](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/oop/面向对象、面向过程.md)
@@ -34,6 +36,16 @@
 - [8中基本数据类型](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/datatype/8种基本数据类型.md)
 
 - [自动装箱与拆箱](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/autobox/自动装箱与拆箱.md)
+
+### Object
+
+- [==和equals的区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/object/==和equals的区别.md)
+
+- [equals()和hashCode()方法的渊源](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/object/equals()和hashCode()方法的渊源.md)
+
+- [clone()方法](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/object/clone()方法.md)
+
+- [finalize()方法](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/object/finalize()方法.md)
 
 ### 字符串(String)
 
