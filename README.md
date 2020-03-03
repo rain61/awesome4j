@@ -62,3 +62,5 @@
 ### 集合类
 
 - [常用集合图谱](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/collection/Java常用集合框架图谱.md)
+
+- [ArrayList](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/list/ArrayList.md)  
