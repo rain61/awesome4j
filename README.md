@@ -31,6 +31,8 @@
 
 - [成员变量和方法作用域](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/scope/成员变量和方法作用域.md)
 
+- [内部类](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/innerclass/内部类.md)
+
 ### 基本数据类型
 
 - [8中基本数据类型](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/datatype/8种基本数据类型.md)
@@ -56,3 +58,7 @@
 - [String对象的编译期间优化](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/string/String对象的编译期间优化.md)
 
 - [String常量池与intern()的知识点](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/string/String常量池与intern()的知识点.md)
+
+### 集合类
+
+- [常用集合图谱](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/collection/Java常用集合框架图谱.md)
