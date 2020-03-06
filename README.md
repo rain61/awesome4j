@@ -33,11 +33,13 @@
 
 - [内部类](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/innerclass/内部类.md)
 
-### 基本数据类型
+### 基本数据类型及数组
 
 - [8中基本数据类型](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/datatype/8种基本数据类型.md)
 
 - [自动装箱与拆箱](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/autobox/自动装箱与拆箱.md)
+
+- [数组](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/array/数组.md)
 
 ### Object
 
