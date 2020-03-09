@@ -65,4 +65,12 @@
 
 - [常用集合图谱](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/collection/Java常用集合框架图谱.md)
 
-- [ArrayList](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/list/ArrayList.md)  
+- [List,Set,Map三者的区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/collection/List,Set,Map三者的区别.md)
+
+- [ArrayList](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/list/ArrayList.md)
+
+- [LinkedList](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/list/LinkedList.md)
+
+- [ArrayList与LinkedList的区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/list/ArrayList与LinkedList的区别.md)
+
+- [ArrayList与Vector的区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/util/list/ArrayList与Vector的区别.md)
