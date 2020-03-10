@@ -41,6 +41,12 @@
 
 - [数组](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/basic/array/数组.md)
 
+### Java虚拟机(JVM)
+
+- [Class文件是如何被加载进JVM的](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/advanced/jvm/classload/Class文件是如何被加载进JVM的.md)
+
+- [类加载时机及顺序专项示例](/awesome4j-java/src/main/java/com/penglecode/awesome4j/java/advanced/jvm/classload/类加载时机及顺序专项示例.md)
+
 ### Object
 
 - [==和equals的区别](awesome4j-java/src/main/java/com/penglecode/awesome4j/java/lang/object/==和equals的区别.md)
