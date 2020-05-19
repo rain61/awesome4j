@@ -1,8 +1,8 @@
 package com.penglecode.awesome4j.java.lang.string;
 
 /**
- * 字符串是一种比较特殊的对象，他有自己特有的字符串常量池中。以字面量的形式创建String变量时，
- * JVM会在编译期间就把该字面量放到字符串常量池中，由Java程序启动的时候就已经加载到内存中了。
+ * 字符串是一种比较特殊的对象，他有自己特有的字符串常量池。以字面量的形式创建String变量时，
+ * JVM会在编译期间就把该字面量放到字符串常量池中，在Java程序启动的时候就已经加载到内存中了。
  * 这个字符串常量池的特点就是有且只有一份相同的字面量，如果有其它相同的字面量，JVM则返回这个字面量的引用，
  * 如果没有相同的字面量，则在字符串常量池创建这个字面量并返回它的引用。
  * 
@@ -56,11 +56,11 @@ public class StringExample1 {
 	 * String常量池的知识点: https://blog.csdn.net/hz90s/article/details/80819619
 	 */
 	public static void stringPool2() {
-		String s1 = new String("hello"); //生成两个对象：堆中s1引用对象，字符串池中"abc"字符串对象
-        String intern1 = s1.intern(); //执行intern()方法时，池中已经存在串"abc"则立即返回字符串池中"abc"字符串对象的引用
-        String s2 = "hello"; //池中已经存在串"abc"则立即返回字符串池中"abc"字符串对象的引用
-        System.out.println("s1 == s2 : " + (s1 == s2)); //s1是new出来的，因此s1与任何对象==运算不可能为true，所以此处肯定输出false
-        System.out.println("intern1 == s1 : " + (intern1 == s1)); //s1是new出来的，因此s1与任何对象==运算不可能为true，所以此处肯定输出false
+		String s1 = new String("hello"); //生成两个对象：堆中s1引用对象，字符串池中"hello"字符串对象
+        String intern1 = s1.intern(); //执行intern()方法时，池中已经存在串"hello"则立即返回字符串池中"hello"字符串对象的引用
+        String s2 = "hello"; //池中已经存在串"hello"则立即返回字符串池中"hello"字符串对象的引用
+        System.out.println("s1 == s2 : " + (s1 == s2)); //s1是new出来的具有堆内存地址,s2指向的是常量池地址，因此s1与任何对象==运算不可能为true，所以此处肯定输出false
+        System.out.println("intern1 == s1 : " + (intern1 == s1)); //s1是最先new字面值出来的，因此s1与任何对象==运算不可能为true，所以此处肯定输出false
         System.out.println("intern1 == s2 : " + (intern1 == s2)); //intern1是返回自字符串常量池中的引用，因此为true
 	}
 	
@@ -108,7 +108,7 @@ public class StringExample1 {
 		//stringPool1();
 		//stringPool2();
 		//stringPool3();
-		stringPool4();
+		//stringPool4();
 	}
 
 }

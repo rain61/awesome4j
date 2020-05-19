@@ -1,7 +1,5 @@
 package com.penglecode.awesome4j.java.basic.scope.protecteds;
 
-import com.penglecode.awesome4j.java.basic.scope.protecteds.ProtectedClass;
-
 /**
  * protected修饰的成员变量或方法，仅同包下的类或对象可以访问，或者其子类可以访问
  */
