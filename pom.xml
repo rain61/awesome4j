@@ -22,7 +22,7 @@
 
 		<springboot.version>2.2.2.RELEASE</springboot.version>
 		<springcloud.version>Hoxton.RELEASE</springcloud.version>
-		<guava.version>28.0-jre</guava.version>
+		<guava.version>29.0-jre</guava.version>
 		<commons-net.version>3.6</commons-net.version>
 		<json.version>20190722</json.version>
 		<druid.version>1.1.21</druid.version>
